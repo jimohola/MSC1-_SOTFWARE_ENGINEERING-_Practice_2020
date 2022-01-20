@@ -1,0 +1,86 @@
+// Pointer : max value
+
+#include <iostream>
+
+using namespace std;
+
+int * sort_with_pointer(int array[], int size)
+{
+    int * max = array;
+
+    for (int i = 0; i < size; i++)
+    {
+        if (*max < array[i])
+            *max = array[i];
+    }
+    return max;
+
+}
+
+int main()
+{
+    int size;
+
+    cout << "Enter dataset size" << endl;
+    cin >> size;
+
+    int array[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << "enter value" << i << endl;
+        cin >> array[i];
+    }
+
+
+    int * max_value = sort_with_pointer(array,size);
+    cout << *max_value;
+    return 0;
+}
+
+____________________________________________________________________________________________________
+
+
+//Pointer : max value
+#include <iostream>
+#include<conio.h>
+
+using namespace std;
+
+int *findMax(int arr[],int a);
+
+int main(){
+
+   int a,j,*k;
+
+  cout<<"Enter number of data values";
+  cin>>a;
+
+  int arr[a];
+  for(j=0;j<a;j++)     {
+
+    cout<<"Enter value:" ;
+
+   cin>>arr[j];
+}
+  k=findMax(arr,a);
+
+  cout<<"The max value is:"<<*k;
+
+  getch();
+  return 0;
+}
+
+
+int *findMax(int data[],int a){
+
+  int *max=data;
+  int j;
+
+ for(j=1;j<a;j++){
+
+   if(*max<*(max+j)) *max=*(max+j);
+
+  }
+  return max;
+}

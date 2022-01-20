@@ -1,0 +1,102 @@
+#include<iostream>
+using namespace std;
+
+class rectangle//making a class for using its attributes and functions
+   {
+    private:
+      float length;
+      float width;
+    public:
+        rectangle(float l,float w){
+            length=l;
+            width=w;}
+            
+        float area_rectangle (){return length*width;}//as area of rectangle = length x width
+          };
+        
+int main(){
+    cout<<"Welcome to Task 1 (area of rectangle) of final practice.\n"<<"Please enter length: ";
+    float l,w;
+    cin>>l;
+    cout<<"Please enter width: ";
+    cin>>w;
+    rectangle a(l,w);//a is an object of rectangle class
+    cout<<"\nThe area is "<<a.area_rectangle();
+    cout<<"\n*****************************THE END*************************";
+    return 0;
+}
+#########################################################################################
+
+#include<iostream>
+using namespace std;
+
+class constructing  
+   {
+    private:
+      int num1;
+      int num2;
+    public:
+    	constructing(int l,int w){
+    		num1=l;
+    		num2=w;}
+    		
+      	int add_nums(){return num1+num2;}//returning the sum of its private variables
+		  };
+      	
+int main(){
+	cout<<"Welcome to Task 2 (adding numbers) of final practice.\n"<<"Please enter first number: ";
+	int l,w;
+	cin>>l;
+	cout<<"Please enter second number: ";
+	cin>>w;
+	constructing a(l,w);//calling the constructor
+	cout<<"\nThe addition is "<<a.add_nums();
+	cout<<"\n*****************************THE END*************************";
+	return 0;
+}
+
+#############################################################################################
+
+#include <iostream>
+using namespace std;
+
+class add_complx
+{
+	private:
+		int real, imaginary;//private variables only accessible in this class
+	public :  
+      	add_complx(int r, int i){//constructor for initializing the private variables
+      	real =r;
+      	imaginary=i;}
+      	
+	  	int get_real(){return real;}
+		int get_imaginary(){return imaginary;}
+	};
+
+int main()
+{	
+	int temp1,temp2;//temporary variables just for storing value
+	
+	cout << "Last task of adding two complex numbers.\n";
+	cout << "Enter a and b where a + ib\n";
+	cout << "\na = ";
+	cin >> temp1;
+	cout << "b = ";
+	cin >> temp2;
+	add_complx a(temp1,temp2);//first complex number initialized
+	
+	cout << "Enter c and d where c + id\n";
+	cout << "\nc = ";
+	cin >> temp1;
+	cout << "d = ";
+	cin >> temp2;
+	add_complx b(temp1,temp2);//second complex number initialized
+	
+	if (a.get_imaginary()+b.get_imaginary() >= 0)
+	  cout << "Answer = " << a.get_real()+b.get_real() << " + " << a.get_imaginary()+b.get_imaginary() << "i";//using getter functions for using private variables.
+	else
+	  cout << "Answer = " << a.get_real()+b.get_real() << " " << a.get_imaginary()+b.get_imaginary() << "i";
+	
+	cout<<"\n\n***********THE END**********************";
+   return 0;
+}
